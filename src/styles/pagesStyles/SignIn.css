@@ -36,24 +36,11 @@
 .sign_in_container input {
     background-color: var(--inputBackgroundColor);
     border: none;
-    outline: none;
+    outline-color: var(--primaryColor);
     padding: 12px;
     border-radius: 5px;
 }
 
 .sign_in_container input::placeholder {
     color: #4F555A;
-}
-
-.sign_in_container button {
-    background-color: var(--primaryColor);
-    color: white;
-    font-weight: bold;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.sign_in_container button:hover {
-    cursor: pointer;
 }

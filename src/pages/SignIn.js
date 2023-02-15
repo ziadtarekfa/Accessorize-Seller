@@ -20,7 +20,7 @@ const SignIn = () => {
             <form className="sign_in_container" onSubmit={signIn}>
                 <input id="email_sign_in" type="email" placeholder="Enter Email" ref={emailRef} required></input>
                 <input id="password_sign_in" type="password" placeholder="Password" ref={passwordRef} required></input>
-                <button>Sign In</button>
+                <button className="default_button">Sign In</button>
             </form>
             <img src={business_man_on_rocket} alt="business_man_on_rocket" />
         </main>
