@@ -27,7 +27,3 @@
 .sidebar a {
     color: inherit;
 }
-
-.active {
-    color: var(--primaryColor);
-}
