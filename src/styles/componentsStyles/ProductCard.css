@@ -1,0 +1,33 @@
+.product-card {
+    display: flex;
+    flex-direction: column;
+    width: 18.8rem;
+}
+
+.product-card img {
+    border-radius: 10px;
+    height: 350px;
+}
+
+.product-card h6 {
+    /* brand name */
+    color: var(--primaryColor);
+    font-size: 13px;
+}
+
+.product-card-text {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.product-card:hover {
+    cursor: pointer;
+}

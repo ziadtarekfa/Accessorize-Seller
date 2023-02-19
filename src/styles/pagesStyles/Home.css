@@ -1,3 +1,38 @@
 .home {
     display: flex;
 }
+
+.products_list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    gap: 7% 30px;
+    margin-left: 1%;
+    padding: 3%;
+    padding-bottom: 7%;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.search_container input {
+    padding: 10px;
+    padding-left: 40px;
+    border: none;
+    border-radius: 20px;
+    font-size: 17px;
+    width: 50%;
+    margin-left: 2.5%;
+    margin-top: 40px;
+    background-color: #DCDFE1;
+
+}
+
+.search_container svg {
+    position: relative;
+    left: 67px;
+    top: 5px;
+    color: gray;
+}

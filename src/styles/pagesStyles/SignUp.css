@@ -35,7 +35,7 @@
 .sign_up_form {
     display: grid;
     margin-top: 60px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px 30px;
 }
 
