@@ -34,7 +34,7 @@ const SignUp = () => {
             confirmPasswordRef.current.setCustomValidity("Passwords don't match");
             return;
         }
-        
+
 
     }
     return (
