@@ -19,7 +19,7 @@ body {
   padding: 10px;
 }
 
-.default_button:hover {
+button:hover {
   cursor: pointer;
 }
 

@@ -1,0 +1,84 @@
+.orders-table {
+    /* padding-left: 2%; */
+    padding-right: 5%;
+}
+
+.search-container {
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    padding-left: 0;
+    width: 500px;
+}
+
+.search-container input {
+    background-color: white;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    color: black;
+    padding: 10px 10px 10px 30px;
+    outline: none;
+    width: 60%;
+}
+
+.search-container svg {
+    position: absolute;
+    left: 8.4%;
+    top: 14.8%;
+}
+
+.search-container button {
+    background-color: var(--primaryColor);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 10px;
+    margin-left: 80px;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    border-spacing: 0;
+    box-shadow: 0 0 0 1px lightgray;
+    border-style: hidden;
+    overflow: hidden;
+}
+
+td {
+    color: black;
+    padding: 10px;
+
+}
+
+tr {
+    border-bottom: 1px solid lightgray;
+    font-size: 14px;
+}
+
+thead {
+    background-color: #F9FBFC;
+    border: none;
+
+}
+
+th {
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+    color: #767D89;
+
+}
+
+.view-cell {
+    font-weight: bold;
+    color: #767D89;
+}
+
+.view-cell:hover {
+    color: var(--primaryColor);
+    cursor: pointer;
+}

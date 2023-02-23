@@ -31,7 +31,7 @@ const SideBar = () => {
                     <AiOutlinePlus size="22px" title='Add Product' />
                 </NavLink>
                 <NavLink
-                    to='/view-orders'
+                    to='/orders'
                     style={({ isActive }) =>
                         isActive ? activeStyle : undefined
                     }>
