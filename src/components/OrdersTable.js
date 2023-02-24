@@ -2,6 +2,7 @@ import { AiOutlineSearch } from 'react-icons/ai';
 import { useEffect, useState, useRef } from 'react';
 import Pagination from './Pagination';
 import '../styles/componentsStyles/OrdersTable.css';
+import { Link } from 'react-router-dom';
 
 
 const OrdersTable = () => {
@@ -269,7 +270,10 @@ const OrdersTable = () => {
                                     <td >{order.date}</td>
                                     <td >{order.shippingAddress}</td>
                                     <td >{order.total}</td>
-                                    <td className='view-cell'>{'View'}</td>
+                                    <Link to={order.id} style={{ 'textDecoration': 'none' }}>
+                                        <td className='view-cell'>{'View'}</td>
+                                    </Link>
+
                                 </tr>
                             );
                         })

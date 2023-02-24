@@ -1,0 +1,58 @@
+.customer-info {
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 20em;
+    padding: 2%;
+    width: 30%;
+}
+
+.customer-info hr {
+    border: 1px solid #dfdede;
+}
+
+.customer-info>span {
+    /* Customer Word */
+    color: #a1a0a0;
+    font-size: 20px;
+}
+
+.customer-info img {
+    /* Profile Picture */
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+.cx-name {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.cx-contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px 0 10px 0;
+    height: 70px;
+}
+
+.email-container,
+.phone-container {
+    display: flex;
+    align-items: center;
+}
+
+.email-container span,
+.phone-container span {
+    margin-left: 10px;
+}
+
+.cx-shipping-address {
+    margin-top: 10px;
+}
+
+.cx-shipping-address p {
+    margin-top: 5px;
+    line-height: 22px;
+}

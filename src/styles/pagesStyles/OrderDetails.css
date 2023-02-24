@@ -1,0 +1,21 @@
+.order-details {
+    padding: 4%;
+}
+
+.order-details h3 span {
+    /* Order ID  */
+    letter-spacing: 1px;
+}
+
+.order-details p span {
+    /* Order Date */
+    color: #6B6B6B;
+    font-weight: bold;
+}
+
+.order-details button {
+    position: absolute;
+    right: 24%;
+    bottom: 20%;
+    font-weight: 200;
+}

@@ -9,6 +9,9 @@ import { NavLink } from 'react-router-dom';
 const activeStyle = {
     color: "#4461F2"
 }
+const notActiveStyle = {
+    color: "#bdbdbd"
+}
 const SideBar = () => {
 
     return (
@@ -19,21 +22,21 @@ const SideBar = () => {
                 <NavLink
                     to='/'
                     style={({ isActive }) =>
-                        isActive ? activeStyle : undefined
+                        isActive ? activeStyle : notActiveStyle
                     }>
                     <AiFillHome size="22px" title='Home' />
                 </NavLink>
                 <NavLink
                     to='/add-product'
                     style={({ isActive }) =>
-                        isActive ? activeStyle : undefined
+                        isActive ? activeStyle : notActiveStyle
                     }>
                     <AiOutlinePlus size="22px" title='Add Product' />
                 </NavLink>
                 <NavLink
                     to='/orders'
                     style={({ isActive }) =>
-                        isActive ? activeStyle : undefined
+                        isActive ? activeStyle : notActiveStyle
                     }>
                     <BsFillCartCheckFill size="22px" title='View Orders' />
 
@@ -41,7 +44,7 @@ const SideBar = () => {
                 <NavLink
                     to='/profile'
                     style={({ isActive }) =>
-                        isActive ? activeStyle : undefined
+                        isActive ? activeStyle : notActiveStyle
                     }>
                     <CgProfile size="22px" title='Profile' />
                 </NavLink>
