@@ -19,6 +19,12 @@ body {
   padding: 10px;
 }
 
+.flex_box_column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 button:hover {
   cursor: pointer;
 }

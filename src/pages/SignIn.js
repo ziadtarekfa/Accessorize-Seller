@@ -27,7 +27,6 @@ const SignIn = () => {
             </form>
             <img src={business_man_on_rocket} alt="business_man_on_rocket" />
         </main>
-
     );
 }
 

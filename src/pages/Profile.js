@@ -95,7 +95,7 @@ const Profile = () => {
                     </div >
                     <div className='flex_box_column' style={{ "marginLeft": 10 }}>
                         <label>Floor number</label>
-                        <input defaultValue={seller.floorNo} type="number" required onChange={(e) => {
+                        <input defaultValue={seller.floorNo} type="number" min="1" required onChange={(e) => {
                             seller.floorNo = e.target.value;
                         }} />
                     </div>
@@ -103,7 +103,7 @@ const Profile = () => {
 
                 <div className='flex_box_column'>
                     <label>Apartment number</label>
-                    <input defaultValue={seller.apartmentNo} type="number" required onChange={(e) => {
+                    <input defaultValue={seller.apartmentNo} type="number" min="1" required onChange={(e) => {
                         seller.apartmentNo = e.target.value;
                     }} />
                 </div>

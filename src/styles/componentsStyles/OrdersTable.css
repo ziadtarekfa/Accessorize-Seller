@@ -23,8 +23,8 @@
 
 .search-container svg {
     position: absolute;
-    left: 8.4%;
-    top: 14.8%;
+    left: 7.9%;
+    top: 13.8%;
 }
 
 .search-container button {
@@ -33,7 +33,7 @@
     border-radius: 5px;
     color: white;
     padding: 5px 10px;
-    margin-left: 80px;
+    margin-left: 20px;
 }
 
 table {
