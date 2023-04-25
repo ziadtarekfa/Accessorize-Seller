@@ -7,16 +7,16 @@ const ProductCard = ({ product }) => {
     return (
         <div className="product-card"
             onClick={() => {
-                navigate(`/products/${product.id}`);
+                navigate(`/products/${product._id}`);
             }}>
-            <img src={product.image} alt='product' />
+            <img src={product.images[0]} alt='product' />
             <div className="product-card-text">
                 <div>
                     <h6>{product.brand}</h6>
-                    <h4>{product.model}</h4>
+                    <h4>{product.name}</h4>
                 </div>
                 <div className='price-container'>
-                    <span style={{ 'fontWeight': 'bold', }}>{`$${product.price}`}</span>
+                    <span style={{ 'fontWeight': 'bold'}}>{`$${product.price}`}</span>
                 </div>
             </div>
 
