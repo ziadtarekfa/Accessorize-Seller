@@ -3,12 +3,13 @@ import '../styles/pagesStyles/AddProduct.css';
 
 const AddProduct = () => {
 
-    const saveChanges = (e) => {
+    const saveChanges = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         formData.append('sellerEmail', "ziadtarekfa@gmail.com");
 
-        fetch('http://localhost:8000/seller/addProduct', {
+        console.log("hello");
+        await fetch('http://localhost:8000/seller/addProduct', {
             method: "POST",
             body: formData,
         }).then((res) => {
@@ -16,7 +17,7 @@ const AddProduct = () => {
         }).then((data) => {
             console.log(data);
         }).catch((e) => {
-            console.log(e);
+            alert(e.message);
         })
     }
 
@@ -59,11 +60,11 @@ const AddProduct = () => {
                 <div className='flex_box_row'>
                     <div className='flex_box_column' style={{ 'marginRight': '10px' }}>
                         <label>Price</label>
-                        <input type="text" name='price' />
+                        <input type="number" name='price' min={1} />
                     </div>
                     <div className='flex_box_column'>
                         <label>Stock</label>
-                        <input type="text" name='stock' />
+                        <input type="number" name='stock' />
                     </div>
                 </div>
 
