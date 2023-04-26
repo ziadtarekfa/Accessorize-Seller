@@ -1,25 +1,23 @@
 import SideBar from '../components/SideBar';
-import profilePic from '../assets/images/profile-picture.jpg';
 import '../styles/pagesStyles/AddProduct.css';
 
 const AddProduct = () => {
-    const seller = {
-        profilePic: profilePic,
-        firstName: "Anita",
-        lastName: "Cruz",
-        email: "anitacruz123@gmail.com",
-        phoneNo: "01066324579",
-        birthDate: "2001-12-19",
-        country: "Egypt",
-        city: "New Cairo",
-        zipCode: 3421,
-        streetName: "Thawra St",
-        floorNo: 2,
-        apartmentNo: 14
-    }
+
     const saveChanges = (e) => {
         e.preventDefault();
-        console.log(seller);
+        const formData = new FormData(e.currentTarget);
+        formData.append('sellerEmail', "ziadtarekfa@gmail.com");
+
+        fetch('http://localhost:8000/seller/addProduct', {
+            method: "POST",
+            body: formData,
+        }).then((res) => {
+            return res.json();
+        }).then((data) => {
+            console.log(data);
+        }).catch((e) => {
+            console.log(e);
+        })
     }
 
     return (
@@ -32,41 +30,54 @@ const AddProduct = () => {
 
                 <div className='flex_box_column'>
                     <label>Name</label>
-                    <input type="text" />
+                    <input type="text" name='name' />
                 </div>
 
                 <div className='flex_box_column'>
                     <label>Brand </label>
-                    <input type="text" />
+                    <input type="text" name='brand' />
                 </div>
                 <div className='flex_box_column'>
                     <label>Category</label>
-                    <select>
+                    <select name='category'>
                         <option>Masks</option>
                         <option>Glasses</option>
                         <option>Hats</option>
                     </select>
                 </div>
-                <div className='flex_box_column'>
-                    <label>Country of Origin</label>
-                    <input type="text" />
+
+                <div className='flex_box_row'>
+                    <div className='flex_box_column' style={{ 'marginRight': '10px' }}>
+                        <label>Country of Origin</label>
+                        <input type="text" name='origin' />
+                    </div>
+                    <div className='flex_box_column'>
+                        <label>Color</label>
+                        <input type="text" name='color' />
+                    </div>
+                </div>
+                <div className='flex_box_row'>
+                    <div className='flex_box_column' style={{ 'marginRight': '10px' }}>
+                        <label>Price</label>
+                        <input type="text" name='price' />
+                    </div>
+                    <div className='flex_box_column'>
+                        <label>Stock</label>
+                        <input type="text" name='stock' />
+                    </div>
                 </div>
 
                 <div className='flex_box_column'>
                     <label>Description</label>
-                    <textarea type="text" style={{ "height": 150, "marginTop": 5 }} />
+                    <textarea type="text" style={{ "height": 100, "marginTop": 5 }} name='description' />
                 </div>
 
-                <div className='flex_box_column file' onChange={(e) => {
-                    console.log(e.target.value);
-                }}>
-                    <label>Add image</label>
-                    <input type="file" name="image" />
+                <div className='flex_box_column file'>
+                    <label>Add images</label>
+                    <input type="file" name="images" multiple />
 
                 </div>
-                <div className='flex_box_column file' onChange={(e) => {
-                    console.log(e.target.value);
-                }}>
+                <div className='flex_box_column file'>
                     <label>Add Model</label>
                     <input type="file" name="model" />
                 </div>

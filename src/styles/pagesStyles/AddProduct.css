@@ -1,7 +1,7 @@
 .add-product {
     display: flex;
     flex-direction: column;
-    margin: 3% auto 0 auto;
+    margin: 2.5% auto 0 auto;
     width: 40%;
 }
 
@@ -19,7 +19,7 @@
 .add-product textarea {
     border: 2px solid lightgray;
     border-radius: 5px;
-    height: 32px;
+    height: 30px;
     padding: 7px;
     margin-top: 5px;
 }
