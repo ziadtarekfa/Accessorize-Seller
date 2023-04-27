@@ -6,11 +6,28 @@ const SignIn = () => {
 
     let navigate = useNavigate();
 
-    const signIn = (e) => {
+    const signIn = async (e) => {
         e.preventDefault();
-        const email = emailRef.current.value;
-        const password = passwordRef.current.value;
-        navigate('/');
+        const seller = {
+            email: emailRef.current.value,
+            password: passwordRef.current.value
+        }
+
+        const response = await fetch('http://localhost:8000/seller/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(seller),
+            credentials: "include"
+        })
+
+        const data = await response.json();
+        if (!response.ok) {
+            alert(data.error);
+        }
+        else {
+            navigate('/');
+        }
+
     }
     const emailRef = useRef();
     const passwordRef = useRef();

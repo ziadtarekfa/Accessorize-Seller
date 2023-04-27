@@ -8,24 +8,24 @@ import Orders from './pages/Orders';
 import OrderDetails from './pages/OrderDetails';
 import AddProduct from './pages/AddProduct';
 import ProductDetails from './pages/ProductDetails';
+import PrivateRoutes from './utils/PrivateRoutes';
 
 function App() {
   return (
-
     <Router>
       <Routes>
-        <Route path='/' element={<Home />} />
         <Route path='/sign-in' element={<SignIn />} />
         <Route path='/sign-up' element={<SignUp />} />
-        <Route path='/profile' element={<Profile />} />
-        <Route path='/orders' element={<Orders />} />
-        <Route path='/orders/:id' element={<OrderDetails />} />
-        <Route path='/add-product' element={<AddProduct />} />
-        <Route path='/products/:id' element={<ProductDetails />} />
+        <Route element={<PrivateRoutes />}>
+          <Route path='/' element={<Home />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/orders' element={<Orders />} />
+          <Route path='/orders/:id' element={<OrderDetails />} />
+          <Route path='/add-product' element={<AddProduct />} />
+          <Route path='/products/:id' element={<ProductDetails />} />
+        </Route>
       </Routes>
     </Router>
-
-
   );
 }
 

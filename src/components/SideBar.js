@@ -4,18 +4,30 @@ import { BsFillCartCheckFill } from 'react-icons/bs';
 import { CgProfile } from 'react-icons/cg';
 import { MdOutlineLogout } from 'react-icons/md';
 import '../styles/componentsStyles/sidebar.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
-const activeStyle = {
-    color: "#4461F2"
-}
-const notActiveStyle = {
-    color: "#bdbdbd"
-}
+
 const SideBar = () => {
 
+    const navigate = useNavigate();
+    const activeStyle = {
+        color: "#4461F2"
+    }
+    const notActiveStyle = {
+        color: "#bdbdbd"
+    }
+
+    const logout = async () => {
+        await fetch('http://localhost:8000/seller/logout', { credentials: "include" }).then((response) => {
+            if (response.ok) {
+                navigate('/sign-in');
+            }
+        }).catch((err) => {
+            alert(err.message);
+        });
+    }
     return (
-        <aside className='sidebar'>
+        <aside className='sidebar' >
             <img className='bags_icon' src={bags} alt="bags_icon" />
             <div className='icons_container'>
 
@@ -50,8 +62,8 @@ const SideBar = () => {
                 </NavLink>
 
             </div>
-            <MdOutlineLogout className='logout_icon' size="22px" title="Log out" />
-        </aside>
+            <MdOutlineLogout className='logout_icon' size="22px" title="Log out" onClick={logout} />
+        </aside >
     );
 }
 
