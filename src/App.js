@@ -11,6 +11,7 @@ import ProductDetails from './pages/ProductDetails';
 import PrivateRoutes from './utils/PrivateRoutes';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path='/orders/:id' element={<OrderDetails />} />
           <Route path='/add-product' element={<AddProduct />} />
           <Route path='/products/:id' element={<ProductDetails />} />
+          <Route path='*' element ={<NotFound/>}/>
         </Route>
       </Routes>
       <ToastContainer />
