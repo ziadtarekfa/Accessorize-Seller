@@ -7,10 +7,16 @@
     letter-spacing: 1px;
 }
 
+.order-details p {
+    margin-top: 10px;
+}
+
 .order-details p span {
     /* Order Date */
     color: #6B6B6B;
     font-weight: bold;
+    margin-left: 5px;
+
 }
 
 .order-details button {

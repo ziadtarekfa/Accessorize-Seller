@@ -1,69 +1,21 @@
 .profile_form {
     display: flex;
     flex-direction: column;
-    margin: 3.5% auto 0 auto;
+    margin: 2.5% auto 0 auto;
     width: 40%;
 }
 
-.profile_image_container {
-    display: flex;
-    align-items: center;
+.profile_form h4 {
+    margin-top: 15px;
+}
+
+.profile_form .flex>:nth-child(2) {
+    margin-left: 10px;
 }
 
 
-.profile_form img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50px;
-}
-
-.profile_form div {
+.profile_form>.flex_box_column,
+.profile_form .flex {
     justify-content: space-between;
-    margin-top: 10px;
-}
-
-.profile_form label {
-    color: gray;
-    font-weight: bold;
-    font-size: 12px;
-}
-
-.profile_form input {
-    border-radius: 5px;
-    border-color: lightgray;
-    border-style: solid;
-    padding: 7px;
-    margin-top: 5px;
-    height: 30px;
-
-}
-
-.flex_box_row {
-    display: flex;
-}
-
-.profile_form button {
-    cursor: pointer;
-}
-
-.save_button {
-    background-color: var(--primaryColor);
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-    padding: 10px;
-    width: 30%;
-    margin-top: 20px;
-}
-
-.cancel_button {
-    background-color: #FDFDFD;
-    border: 2px solid var(--primaryColor);
-    border-radius: 5px;
-    color: var(--primaryColor);
-    width: 19%;
-    padding: 7px;
-    margin-right: 7px;
-    text-decoration: none;
+    margin-top: 15px;
 }

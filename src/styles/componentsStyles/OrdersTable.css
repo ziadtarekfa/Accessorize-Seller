@@ -1,39 +1,6 @@
 .orders-table {
-    /* padding-left: 2%; */
     padding-right: 5%;
-}
 
-.search-container {
-    border-radius: 10px;
-    margin-top: 10px;
-    padding: 10px;
-    padding-left: 0;
-    width: 500px;
-}
-
-.search-container input {
-    background-color: white;
-    border: 1px solid lightgrey;
-    border-radius: 5px;
-    color: black;
-    padding: 10px 10px 10px 30px;
-    outline: none;
-    width: 60%;
-}
-
-.search-container svg {
-    position: absolute;
-    left: 7.9%;
-    top: 13.8%;
-}
-
-.search-container button {
-    background-color: var(--primaryColor);
-    border: none;
-    border-radius: 5px;
-    color: white;
-    padding: 5px 10px;
-    margin-left: 20px;
 }
 
 table {
@@ -81,4 +48,8 @@ th {
 .view-cell:hover {
     color: var(--primaryColor);
     cursor: pointer;
+}
+
+.orders-table a {
+    text-decoration: none;
 }

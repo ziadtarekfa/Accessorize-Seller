@@ -7,7 +7,7 @@
 }
 
 .sign_up_container {
-    padding: 5% 10% 0 10%;
+    padding: 2% 5% 0 5%;
     width: 100%;
 }
 
@@ -24,7 +24,7 @@
 }
 
 .create_account {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .create_account+p {
@@ -33,10 +33,15 @@
 }
 
 .sign_up_form {
+    margin-top: 15px;
+}
+
+.grid {
     display: grid;
-    margin-top: 60px;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px 30px;
 }
 
 .sign_up_form input,
@@ -44,8 +49,7 @@
     border-color: #D1D1D1;
     border-style: solid;
     border-radius: 5px;
-    outline-color: var(--primaryColor);
-    padding: 12px;
+    padding: 10px;
     margin-top: 5px;
 
 }
@@ -71,4 +75,9 @@
     color: var(--primaryColor);
     text-decoration: none;
     font-weight: bold;
+}
+
+.sign_up button {
+    width: 40%;
+    margin-top: 10px;
 }

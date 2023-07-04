@@ -1,130 +1,144 @@
+import '../styles/pagesStyles/Profile.css';
 import { useNavigate } from 'react-router-dom';
 import SideBar from '../components/SideBar';
-import '../styles/pagesStyles/Profile.css';
 import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
+import Loading from '../components/Loading';
 
 const Profile = () => {
 
-    const id = "642b46520b1e29e3d19b8cdd";
-    const [seller, setSellerProfile] = useState();
+    const [loading, setLoading] = useState(true);
+    const [seller, setSellerProfile] = useState(null);
+    const today = new Date().toISOString().split('T')[0];
     const navigate = useNavigate();
+
     useEffect(() => {
-        fetch(`http://localhost:8000/seller/getSellerProfile/${id}`).then((res) => {
+        fetch('http://localhost:8000/seller/getProfile', { credentials: 'include' }).then((res) => {
             return res.json();
         }).then((data) => {
             setSellerProfile(data);
-        })
+            setLoading(false);
+        });
     }, []);
 
-    const saveChanges = (e) => {
+    const saveChanges = async (e) => {
         e.preventDefault();
-
-        fetch('http://localhost:8000/seller/updateProfile', {
+        const response = await fetch('http://localhost:8000/seller/updateProfile', {
             method: "PUT",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(seller)
-        }).then((res) => {
-            if (res.ok) {
-                console.log("Changes made successfully");
-            }
         });
+        const data = await response.json();
+
+        if (response.ok) {
+            toast.success("Changes Saved Successfully !", {
+                position: 'top-right'
+            });
+        }
+        else {
+            toast.error(data.error, {
+                position: 'top-right'
+            });
+        }
+
     }
 
     return (
-        <main className='home'>
+        <main className='flex'>
             <SideBar />
             {
-                seller &&
-                <form className='profile_form' onSubmit={saveChanges}>
-                    <div className='profile_image_container' >
+                loading ? <Loading />
+                    :
+                    <form className='profile_form' onSubmit={saveChanges}>
+
                         <h2>Edit Profile</h2>
-                    </div>
-                    <h4>Personal info</h4>
-                    <div className='flex_box_row'>
+                        <h4>Personal info</h4>
+
+                        <div className='flex'>
+                            <div className='flex_box_column'>
+                                <label className='default_label'>First name</label>
+                                <input className='default_input' defaultValue={seller.firstName} type="text" required onChange={(e) => {
+                                    seller.firstName = e.target.value;
+                                }} />
+                            </div>
+                            <div className='flex_box_column'>
+                                <label className='default_label'>Last name</label>
+                                <input className='default_input' defaultValue={seller.lastName} type="text" required onChange={(e) => {
+                                    seller.lastName = e.target.value;
+                                }} />
+                            </div>
+                        </div>
+
                         <div className='flex_box_column'>
-                            <label>First name</label>
-                            <input defaultValue={seller.firstName} type="text" required onChange={(e) => {
-                                seller.firstName = e.target.value;
+                            <label className='default_label'>Email </label>
+                            <input className='default_input' defaultValue={seller.email} type="email" required onChange={(e) => {
+                                seller.email = e.target.value;
                             }} />
                         </div>
-                        <div className='flex_box_column' style={{ "marginLeft": 10 }}>
-                            <label>Last name</label>
-                            <input defaultValue={seller.lastName} type="text" required onChange={(e) => {
-                                seller.lastName = e.target.value;
-                            }} />
-                        </div>
-                    </div>
 
-                    <div className='flex_box_column'>
-                        <label>Email </label>
-                        <input defaultValue={seller.email} type="email" required onChange={(e) => {
-                            seller.email = e.target.value;
-                        }} />
-                    </div>
-
-                    <div className='flex_box_column'>
-                        <label>Phone number</label>
-                        <input defaultValue={seller.phoneNumber} type="text" required onChange={(e) => {
-                            seller.phoneNo = e.target.value;
-                        }} />
-                    </div>
-
-                    <div className='flex_box_column'>
-                        <label>Birth date</label>
-                        <input defaultValue={seller.birthDate} type="date" required onChange={(e) => {
-                            seller.birthDate = e.target.value;
-                        }} />
-                    </div>
-                    <h4 style={{ "marginTop": 10 }}>Address info</h4>
-                    <div className='flex_box_column'>
-                        <label>Country</label>
-                        <input defaultValue={seller.address.country} type="text" required onChange={(e) => {
-                            seller.address.country = e.target.value;
-                        }} />
-                    </div>
-                    <div className='flex_box_row' >
                         <div className='flex_box_column'>
-                            <label>City</label>
-                            <input defaultValue={seller.address.city} type="text" required onChange={(e) => {
-                                seller.address.city = e.target.value;
+                            <label className='default_label'>Phone number</label>
+                            <input className='default_input' defaultValue={seller.phoneNumber} type="text" required onChange={(e) => {
+                                seller.phoneNumber = e.target.value;
                             }} />
                         </div>
-                        <div className='flex_box_column' style={{ "marginLeft": 10 }}>
-                            <label>Zip Code</label>
-                            <input defaultValue={seller.address.zipCode} type="number" required onChange={(e) => {
-                                seller.address.zipCode = e.target.value;
-                            }} />
-                        </div>
-                    </div>
-                    <div className='flex_box_row'>
+
                         <div className='flex_box_column'>
-                            <label>Street name</label>
-                            <input defaultValue={seller.address.street} type="text" required onChange={(e) => {
-                                seller.address.streetName = e.target.value;
-                            }} />
-                        </div >
-                        <div className='flex_box_column' style={{ "marginLeft": 10 }}>
-                            <label>Floor number</label>
-                            <input defaultValue={seller.address.floorNum} type="number" min="1" required onChange={(e) => {
-                                seller.address.floorNo = e.target.value;
+                            <label className='default_label'>Birth date</label>
+                            <input className='default_input' defaultValue={seller.birthDate} max={today} type="date" required onChange={(e) => {
+                                seller.birthDate = e.target.value;
                             }} />
                         </div>
-                    </div>
+                        <h4>Address info</h4>
+                        <div className='flex_box_column'>
+                            <label className='default_label'>Country</label>
+                            <input className='default_input' defaultValue={seller.address.country} type="text" required onChange={(e) => {
+                                seller.address.country = e.target.value;
+                            }} />
+                        </div>
+                        <div className='flex' >
+                            <div className='flex_box_column'>
+                                <label className='default_label'>City</label>
+                                <input className='default_input' defaultValue={seller.address.city} type="text" required onChange={(e) => {
+                                    seller.address.city = e.target.value;
+                                }} />
+                            </div>
+                            <div className='flex_box_column'>
+                                <label className='default_label'>Zip Code</label>
+                                <input className='default_input' defaultValue={seller.address.zipCode} type="number" required onChange={(e) => {
+                                    seller.address.zipCode = e.target.value;
+                                }} />
+                            </div>
+                        </div>
+                        <div className='flex'>
+                            <div className='flex_box_column'>
+                                <label className='default_label'>Street name</label>
+                                <input className='default_input' defaultValue={seller.address.street} type="text" required onChange={(e) => {
+                                    seller.address.street = e.target.value;
+                                }} />
+                            </div >
+                            <div className='flex_box_column'>
+                                <label className='default_label'>Floor number</label>
+                                <input className='default_input' defaultValue={seller.address.floorNum} type="number" min="1" required onChange={(e) => {
+                                    seller.address.floorNum = e.target.value;
+                                }} />
+                            </div>
+                        </div>
 
-                    <div className='flex_box_column'>
-                        <label>Apartment number</label>
-                        <input defaultValue={seller.address.aptNum} type="number" min="1" required onChange={(e) => {
-                            seller.apartmentNo = e.target.value;
-                        }} />
-                    </div>
-                    <div>
+                        <div className='flex_box_column'>
+                            <label className='default_label'>Apartment number</label>
+                            <input className='default_input' defaultValue={seller.address.aptNum} type="number" min="1" required onChange={(e) => {
+                                seller.address.aptNum = e.target.value;
+                            }} />
+                        </div>
+                        <div>
 
-                        <button className='cancel_button' type='reset' onClick={() => {
-                            navigate(-1);
-                        }}>Cancel</button>
-                        <button className='save_button' onClick={saveChanges}>Save Changes</button>
-                    </div>
-                </form>
+                            <button className='cancel_button' type='reset' onClick={() => {
+                                navigate(-1);
+                            }}>Cancel</button>
+                            <button className='save_button' type='submit'>Save Changes</button>
+                        </div>
+                    </form>
 
             }
 

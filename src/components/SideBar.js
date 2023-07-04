@@ -1,10 +1,11 @@
+import '../styles/componentsStyles/sidebar.css';
 import bags from '../assets/icons/bags.svg';
 import { AiFillHome, AiOutlinePlus } from 'react-icons/ai'
 import { BsFillCartCheckFill } from 'react-icons/bs';
 import { CgProfile } from 'react-icons/cg';
 import { MdOutlineLogout } from 'react-icons/md';
-import '../styles/componentsStyles/sidebar.css';
 import { NavLink, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 
 const SideBar = () => {
@@ -18,13 +19,15 @@ const SideBar = () => {
     }
 
     const logout = async () => {
-        await fetch('http://localhost:8000/seller/logout', { credentials: "include" }).then((response) => {
-            if (response.ok) {
-                navigate('/sign-in');
-            }
-        }).catch((err) => {
-            alert(err.message);
-        });
+        const response = await fetch('http://localhost:8000/seller/logout', { credentials: "include" });
+
+        if (!response.ok) {
+            const data = await response.json();
+            toast.error(data.error, {
+                position: 'top-right'
+            });
+        }
+        navigate('/sign-in');
     }
     return (
         <aside className='sidebar' >

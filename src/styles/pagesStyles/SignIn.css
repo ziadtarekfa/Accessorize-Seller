@@ -1,12 +1,11 @@
 .sign_in {
     display: flex;
     justify-content: space-between;
-    height: 100vh;
     padding: 10%;
 }
 
 .sign_in .intro_text {
-    padding-top: 5%;
+    margin-top: 5%;
 }
 
 .sign_in .intro_text a {
@@ -15,13 +14,13 @@
     text-decoration: none;
 }
 
+.sign_in .intro_text p {
+    margin-top: 10px;
+}
+
 .sign_in img {
-    width: 600px;
-    height: 600px;
-    position: absolute;
-    transform: rotate(-30deg);
-    right: 33%;
-    bottom: 15%;
+    width: 400px;
+    transform: rotate(-20deg);
 }
 
 .sign_in_container {
@@ -36,7 +35,6 @@
 .sign_in_container input {
     background-color: var(--inputBackgroundColor);
     border: none;
-    outline-color: var(--primaryColor);
     padding: 12px;
     border-radius: 5px;
 }

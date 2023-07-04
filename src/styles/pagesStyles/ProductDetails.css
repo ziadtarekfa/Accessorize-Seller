@@ -1,63 +1,75 @@
-.product-details {
+.product_details_form {
     display: flex;
-    width: 100%;
     justify-content: center;
+    width: 100%;
+    margin: 50px 0 0 80px;
+}
+
+.product_details_form .image_container {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 5% 0 5% 0;
 }
 
-.product-details img {
-    width: 450px;
-    height: 450px;
-    border-radius: 15px;
+.product_details_form .image_container img {
+    width: 60px;
 }
 
-.product-details-content {
+.product_details_form .main_product_details {
+    width: 40%;
+}
+
+.product_details_form .main_product_details .flex_box_column {
+    margin-top: 15px;
+}
+
+.product_details_form .main_product_details select {
+    height: auto;
+    padding-left: 3px;
+}
+
+.product_details_form .main_product_details textarea {
+    margin-top: 5px;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    padding: 7px;
+}
+
+
+.product_details_form .model_details {
+    margin-left: 70px;
     display: flex;
     flex-direction: column;
-    height: 400px;
-    margin-left: 5%;
-    justify-content: space-around;
+    justify-content: center;
+    height: 80%;
+    width: 30%
 }
 
-.product-details-content h2 {
-    /* brand name */
-    color: var(--primaryColor);
+.product_details_form .model_details>input {
+    height: fit-content;
+    background-color: white;
 }
 
-.product-details-content h1 {
-    /* model name */
-    font-size: 40px;
+.product_details_form .model_details .flex {
+    justify-content: space-between;
 }
 
-.product-details-content p {
-    /* decription */
-    color: gray;
-    width: 530px;
+.product_details_form .model_details .flex_box_column {
+    width: auto;
 }
 
-.product-details div {
-    display: flex;
+.product_details_form .model_details .flex_box_column input {
+    width: 120px;
+    text-align: center;
 }
 
-.product-details div span {
-    color: gray;
-    font-size: 15px;
-    margin-right: 5px;
+.product_details_form .model_details .flex_box_column label {
+    text-align: center;
 }
 
-.product-details div p {
-    color: black;
-}
 
-.delete-product {
-    border: none;
-    background-color: red;
-    color: white;
-    font-weight: bold;
-    border-radius: 10px;
-    height: 40px;
-    width: 80%;
-    font-size: 15px;
 
+.model_details>label {
+    margin-top: 15px;
+    margin-bottom: 7px;
 }

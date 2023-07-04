@@ -9,6 +9,8 @@ import OrderDetails from './pages/OrderDetails';
 import AddProduct from './pages/AddProduct';
 import ProductDetails from './pages/ProductDetails';
 import PrivateRoutes from './utils/PrivateRoutes';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
           <Route path='/products/:id' element={<ProductDetails />} />
         </Route>
       </Routes>
+      <ToastContainer />
     </Router>
   );
 }
