@@ -10,7 +10,7 @@ const OrderItems = ({ order }) => {
         const productData = [];
         const items = order.items;
         for (const item of items) {
-            const response = await fetch(`http://localhost:8000/seller/getProductById/${item.productID}`);
+            const response = await fetch(`http://localhost:8000/seller/getProductById/${item.productID}`,{'credentials':'include'});
             const data = await response.json();
             data.quantity = item.quantity;
             productData.push(data);

@@ -42,7 +42,7 @@ const AddProduct = () => {
                         <select className='default_input' type="text" name='category'>
                             <option>Glasses</option>
                             <option>Masks</option>
-                            <option>Earrings</option>
+                            <option>Ears</option>
                             <option>Makeup</option>
                             <option>Hats</option>
                         </select>
