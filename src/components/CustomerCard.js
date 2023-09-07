@@ -1,5 +1,4 @@
 import '../styles/componentsStyles/CustomerCard.css';
-import avatar from '../assets/images/profile-picture.jpg';
 import Loading from '../components/Loading';
 import { CiMail } from 'react-icons/ci';
 import { HiOutlinePhone } from 'react-icons/hi';
@@ -24,8 +23,7 @@ const CustomerCard = ({ order }) => {
                     <>
                         <span>Customer</span>
                         <div className='cx-name'>
-                            <img src={avatar} alt='profile-pic' />
-                            <h5 style={{ 'marginLeft': 10, 'fontSize': 20 }}>{customer.firstName}</h5>
+                            <h5 style={{ 'fontSize': 20 }}>{customer.firstName}</h5>
                         </div>
                         <hr style={{ marginTop: 10 }} />
                         <div className='cx-contact-info'>

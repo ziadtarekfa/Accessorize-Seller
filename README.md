@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Seller Accessorize
+Welcome to the Seller E-Commerce Accessories Web Application! This is a comprehensive guide that will help you understand, set up, and use our web application, which is built using React.js for the front-end and Node.js for the back-end. This application is specifically designed to empower sellers to manage and sell their accessories giving them a market advantage by utilizing **augmented reality**.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features
+Our Seller E-Commerce Accessories Web Application provides a range of features to assist sellers in efficiently managing their accessory products:
 
-## Available Scripts
+- Seller Authentication: Sellers can create accounts, log in, and manage their profiles.
+- Product Listings: Sellers can add and manage their accessory products with details like name, description, price, and images.
+- Order Management: Sellers can view and manage orders placed by customers.
+- Inventory Management: Sellers can track and update their product inventory.
 
-In the project directory, you can run:
+## Tech Stack
+- ReactJS
+- React Router
+- Express
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone the repository to your local machine:
+    ```
+    git clone https://github.com/ziadtarekfa/Accessorize-Seller.git
+    ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. Navigate to the project directory:
+    ```
+    cd seller-accessorize
+    ```
+3. Install dependencies using `npm install`.
+4. Start the **backend** server using `npm start`.
+5. Start the seller **frontend**  using `npm start`.
+6. Use the following email address `ziadtarekfa@gmail.com` and password `hello123` to log in.
 
-### `npm test`
+## Screenshots
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Login
 
-### `npm run build`
+    ![Login](/screenshots/Login.PNG)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Sign up
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    ![Sign up](/screenshots/SignUp.PNG)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Add Product
 
-### `npm run eject`
+    ![Add Product](/screenshots/AddProduct.PNG)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Home Page
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    ![HomePage](/screenshots/HomePage.PNG)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+5. Orders
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    ![Orders](/screenshots/Orders.PNG)
 
-## Learn More
+6. Order Details
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    ![Order Details](/screenshots/OrderDetails.PNG)
